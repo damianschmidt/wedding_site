@@ -169,6 +169,24 @@ section h2 {
     color: #222;
 }
 
+
+/* Map Links */
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.map-link:hover {
+    color: #084298;
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: #222;
