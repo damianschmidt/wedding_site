@@ -39,11 +39,13 @@ header {
     font-size: 1.2rem;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+/* Hover Effects for Navbar Links */
 .navbar-nav .nav-link:hover {
-    color: #f8f9fa;
+    color: #f8f9fa; /* Light color */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Adding shadow on hover */
 }
 
 /* Header Content Styles */
