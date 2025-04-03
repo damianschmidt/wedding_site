@@ -1,45 +1,53 @@
-/* Global body styles */
+/* Global Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
+    color: #333;
 }
 
 /* Header Styles */
 header {
-    position: relative; /* Make the header container relative */
+    position: relative;
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
-}
-
-/* Set the background image to the local file */
-header.header {
     background-image: url('imgs/header-image.jpg');
 }
 
-/* Navbar Styles - position it on top of the header */
-header .navbar {
+/* Navbar Styles */
+.navbar {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
-    z-index: 10; /* Ensure navbar is on top */
-    padding: 1rem;
+    background-color: transparent !important;
+    z-index: 10;
+    padding: 1rem 0;
 }
 
-header .navbar-nav .nav-link {
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 1rem;
+}
+
+.navbar-nav .nav-link {
     color: white !important;
     font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease-in-out;
 }
 
-header .navbar-nav .nav-link:hover {
-    text-decoration: underline;
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
 }
 
 /* Header Content Styles */
-header .header-content {
+.header-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,13 +55,11 @@ header .header-content {
     text-align: center;
 }
 
-header .header-title {
-    font-size: 3rem;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    z-index: 5; /* Ensure title is visible */
+.header-content h1 {
+    font-size: 6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: white;
 }
 
 /* Section Styles */
@@ -62,24 +68,36 @@ section {
 }
 
 section h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 700;
+    color: #222;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #333;
+    background-color: #222;
     color: white;
     padding: 1rem;
+    text-align: center;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    header .header-title {
-        font-size: 2rem;
+    .header-content h1 {
+        font-size: 4rem;
     }
 
     section h2 {
         font-size: 2rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
     }
 }
