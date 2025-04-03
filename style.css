@@ -1,21 +1,25 @@
 /* Global Styles */
-body {
+body, html {
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Lato', sans-serif;
     color: #333;
+    scroll-behavior: smooth;
 }
 
-/* Header Styles */
+/* Header */
 header {
     position: relative;
+    background-image: url('imgs/header-image.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
-    background-image: url('imgs/header-image.jpg');
+    overflow: hidden;
 }
 
-/* Navbar Styles */
+/* Navigation */
 .navbar {
     position: absolute;
     top: 0;
@@ -30,41 +34,130 @@ header {
     gap: 2rem;
 }
 
-.navbar-nav .nav-item {
-    margin: 0 1rem;
-}
-
 .navbar-nav .nav-link {
     color: white !important;
     font-size: 1.2rem;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 0.5px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover Effects for Navbar Links */
 .navbar-nav .nav-link:hover {
-    color: #f8f9fa; /* Light color */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Adding shadow on hover */
+    color: #f8f9fa;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Header Content Styles */
-.header-content {
+/* Centered Title */
+.title-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
 }
 
-.header-content h1 {
+.main-title {
     font-size: 6rem;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: white;
+    margin: 0;
 }
 
-/* Section Styles */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Date & Countdown below title */
+.below-title {
+    position: absolute;
+    top: calc(50% + 3.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wedding-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.countdown-grid .time-block {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    width: 80px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.time-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.time-label {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 2s ease forwards;
+    z-index: 5;
+}
+
+.scroll-indicator .arrow {
+    font-size: 2rem;
+    color: white;
+    animation: bounce 2s infinite;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.scroll-link:hover .arrow {
+    opacity: 1;
+    transform: translateY(12px);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sections */
 section {
     padding: 3rem 1rem;
 }
@@ -76,7 +169,7 @@ section h2 {
     color: #222;
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     background-color: #222;
     color: white;
@@ -84,10 +177,23 @@ footer {
     text-align: center;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
-    .header-content h1 {
+    .main-title {
         font-size: 4rem;
+    }
+
+    .wedding-date {
+        font-size: 1.3rem;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, auto);
+        gap: 0.75rem;
+    }
+
+    .time-number {
+        font-size: 1.5rem;
     }
 
     section h2 {

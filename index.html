@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Marta & Damian</title>
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+          rel="stylesheet"/>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css"
+          rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg"
+          type="image/svg+xml"/>
 </head>
 <body>
-    <header class="header d-flex flex-column justify-content-center align-items-center text-white text-center">
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg w-100 position-absolute top-0">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#our-story">Nasza historia</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#wedding-info">Informacje ślubne</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
-                    </ul>
-                </div>
+<header class="header text-white text-center">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg w-100 position-absolute top-0">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#our-story">Nasza historia</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#wedding-info">Informacje
+                        ślubne</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
+                </ul>
             </div>
-        </nav>
-
-        <!-- Header Title -->
-        <div class="header-content">
-            <h1 class="display-4 fw-bold">Marta & Damian</h1>
         </div>
-    </header>
+    </nav>
 
-    <!-- Sections -->
-    <section id="our-story" class="full-width-section py-5 text-center">
-        <h2 class="fw-bold">Nasza historia</h2>
-        <p class="mt-3">Tutaj opowiemy naszą historię...</p>
-    </section>
+    <!-- Centered Title -->
+    <div class="title-wrapper">
+        <h1 class="main-title">Marta & Damian</h1>
+    </div>
 
-    <section id="wedding-info" class="full-width-section py-5 text-center bg-light">
-        <h2 class="fw-bold">Informacje ślubne</h2>
-        <p class="mt-3">Szczegóły dotyczące naszego ślubu...</p>
-    </section>
+    <!-- Date and Countdown -->
+    <div class="below-title text-center">
+        <p class="wedding-date">11.04.2026</p>
+        <div id="countdown" class="countdown-grid mt-4"></div>
+    </div>
 
-    <section id="gallery" class="full-width-section py-5 text-center">
-        <h2 class="fw-bold">Galeria</h2>
-        <p class="mt-3">Zdjęcia z naszego życia...</p>
-    </section>
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator">
+        <a href="#our-story" class="scroll-link" aria-label="Przejdź do Nasza historia">
+            <span class="arrow">&#8595;</span>
+        </a>
+    </div>
 
-    <section id="rsvp" class="full-width-section py-5 text-center bg-light">
-        <h2 class="fw-bold">RSVP</h2>
-        <p class="mt-3">Potwierdź swoją obecność...</p>
-    </section>
+</header>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2025 Damian Schmidt</p>
-    </footer>
+<!-- Sections -->
+<section id="our-story" class="full-width-section py-5 text-center">
+    <h2 class="fw-bold">Nasza historia</h2>
+    <p class="mt-3">Tutaj opowiemy naszą historię...</p>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+<section id="wedding-info" class="full-width-section py-5 text-center bg-light">
+    <h2 class="fw-bold">Informacje ślubne</h2>
+    <p class="mt-3">Szczegóły dotyczące naszego ślubu...</p>
+</section>
+
+<section id="gallery" class="full-width-section py-5 text-center">
+    <h2 class="fw-bold">Galeria</h2>
+    <p class="mt-3">Zdjęcia z naszego życia...</p>
+</section>
+
+<section id="rsvp" class="full-width-section py-5 text-center bg-light">
+    <h2 class="fw-bold">RSVP</h2>
+    <p class="mt-3">Potwierdź swoją obecność...</p>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4 bg-dark text-white">
+    <p>&copy; 2025 Damian Schmidt</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
