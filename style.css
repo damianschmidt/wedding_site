@@ -1,0 +1,85 @@
+/* Global body styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styles */
+header {
+    position: relative; /* Make the header container relative */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Set the background image to the local file */
+header.header {
+    background-image: url('imgs/header-image.jpg');
+}
+
+/* Navbar Styles - position it on top of the header */
+header .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    z-index: 10; /* Ensure navbar is on top */
+    padding: 1rem;
+}
+
+header .navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+}
+
+header .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Header Content Styles */
+header .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+header .header-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    z-index: 5; /* Ensure title is visible */
+}
+
+/* Section Styles */
+section {
+    padding: 3rem 1rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .header-title {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}

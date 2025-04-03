@@ -1,1 +1,1 @@
-# wedding_site
+# Stronka ślubna Marta i Damian
