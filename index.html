@@ -13,6 +13,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css"
           rel="stylesheet"/>
 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+          rel="stylesheet"/>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2764.svg"
@@ -20,7 +27,6 @@
 </head>
 <body>
 <header class="header text-white text-center">
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg w-100 position-absolute top-0">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,61 +39,81 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#wedding-info">Informacje
                         ślubne</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
                     <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Centered Title -->
     <div class="title-wrapper">
         <h1 class="main-title">Marta & Damian</h1>
     </div>
 
-    <!-- Date and Countdown -->
     <div class="below-title text-center">
         <p class="wedding-date">11.04.2026</p>
         <div id="countdown" class="countdown-grid mt-4"></div>
     </div>
 
-    <!-- Scroll Down Indicator -->
     <div class="scroll-indicator">
         <a href="#our-story" class="scroll-link" aria-label="Przejdź do Nasza historia">
             <span class="arrow">&#8595;</span>
         </a>
     </div>
-
 </header>
 
-<!-- Sections -->
 <section id="our-story" class="full-width-section py-5 text-center">
     <h2 class="fw-bold">Nasza historia</h2>
     <p class="mt-3">Tutaj opowiemy naszą historię...</p>
 </section>
 
 <section id="wedding-info" class="full-width-section py-5 text-center bg-light">
-    <h2 class="fw-bold">Informacje ślubne</h2>
-    <p class="mt-3">Szczegóły dotyczące naszego ślubu...</p>
+    <div class="container">
+        <h2 class="fw-bold mb-5">Informacje ślubne</h2>
+
+        <div class="row justify-content-center g-4">
+            <!-- Ślub Card -->
+            <div class="col-lg-5" data-aos="fade-up">
+                <div class="card shadow rounded-4 p-4 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-heart-fill display-4 text-danger mb-3"></i>
+                        <h3 class="card-title mb-3">Ślub</h3>
+                        <p><strong>Godzina:</strong> 13:00</p>
+                        <p><strong>Miejsce:</strong> Parafia św. Andrzeja Apostoła </p>
+                        <p><strong>Adres:</strong> Rynek 2, Wąsosz Górny, 42-110 Popów </p>
+                        <img src="imgs/church.jpg" alt="Kościół"
+                             class="img-fluid rounded shadow mt-3"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wesele Card -->
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="150">
+                <div class="card shadow rounded-4 p-4 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-cup-straw display-4 text-primary mb-3"></i>
+                        <h3 class="card-title mb-3">Wesele</h3>
+                        <p><strong>Miejsce:</strong> Stodoła – Sala imprez okolicznościowych</p>
+                        <p><strong>Adres:</strong> ul. Drogowców 24/26, 42-200 Częstochowa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="gallery" class="full-width-section py-5 text-center">
-    <h2 class="fw-bold">Galeria</h2>
-    <p class="mt-3">Zdjęcia z naszego życia...</p>
-</section>
-
-<section id="rsvp" class="full-width-section py-5 text-center bg-light">
+<section id="rsvp" class="full-width-section py-5 text-center">
     <h2 class="fw-bold">RSVP</h2>
     <p class="mt-3">Potwierdź swoją obecność...</p>
 </section>
 
-<!-- Footer -->
 <footer class="text-center py-4 bg-dark text-white">
     <p>&copy; 2025 Damian Schmidt</p>
 </footer>
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 <script src="script.js"></script>
 </body>
 </html>
