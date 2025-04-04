@@ -318,6 +318,13 @@ footer {
   order: 1;
 }
 
+#rsvp img {
+  transition: transform 0.3s ease;
+}
+#rsvp a:hover img {
+  transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-title { font-size: 3.25rem; }
