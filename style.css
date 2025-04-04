@@ -325,6 +325,18 @@ footer {
   transform: scale(1.05);
 }
 
+#gallery .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery .btn {
+  transition: background-color 0.3s ease;
+}
+
+#gallery .btn:hover {
+  background-color: #0056b3;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-title { font-size: 3.25rem; }
