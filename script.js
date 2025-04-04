@@ -39,4 +39,14 @@ function updateCountdown() {
 document.addEventListener("DOMContentLoaded", () => {
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // Toggle mobile nav
+    const toggler = document.querySelector(".navbar-toggler");
+    const nav = document.querySelector(".navbar-nav");
+
+    if (toggler && nav) {
+        toggler.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+    }
 });

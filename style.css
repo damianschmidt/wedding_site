@@ -13,10 +13,21 @@ header {
     position: relative;
     background-image: url('imgs/header-image.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 55%;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
 /* Navigation */
@@ -24,9 +35,21 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: transparent !important;
+    background-color: transparent;
     z-index: 10;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .navbar-nav {
@@ -43,10 +66,10 @@ header {
 
 .navbar-nav .nav-link:hover {
     color: #f8f9fa;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.6);
 }
 
-/* Centered Title */
+/* Title */
 .title-wrapper {
     position: absolute;
     top: 50%;
@@ -55,6 +78,7 @@ header {
     text-align: center;
     animation: fadeInUp 1.5s ease forwards;
     opacity: 0;
+    z-index: 2;
 }
 
 .main-title {
@@ -71,7 +95,7 @@ header {
     }
 }
 
-/* Date & Countdown below title */
+/* Countdown */
 .below-title {
     position: absolute;
     top: calc(50% + 3.5rem);
@@ -80,6 +104,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .wedding-date {
@@ -120,14 +145,14 @@ header {
     margin-top: 0.25rem;
 }
 
-/* Scroll Down Indicator */
+/* Scroll Arrow */
 .scroll-indicator {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     animation: fadeIn 2s ease forwards;
-    z-index: 5;
+    z-index: 2;
 }
 
 .scroll-indicator .arrow {
@@ -144,12 +169,8 @@ header {
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
 }
 
 @keyframes fadeIn {
@@ -157,7 +178,7 @@ header {
     to { opacity: 1; }
 }
 
-/* Sections */
+/* Section Base */
 section {
     padding: 3rem 1rem;
 }
@@ -169,8 +190,7 @@ section h2 {
     color: #222;
 }
 
-
-/* Map Links */
+/* Map */
 .map-link {
     display: inline-flex;
     align-items: center;
@@ -195,35 +215,50 @@ footer {
     text-align: center;
 }
 
-/* Responsive */
+/* --- Responsive Breakpoints --- */
+
+/* 🔹 3. Medium Screens: max-width 1024px */
+@media (max-width: 1024px) {
+    .main-title { font-size: 3.25rem; }
+    .wedding-date { font-size: 1.75rem; }
+    .navbar-nav .nav-link { font-size: 1.1rem; }
+    section h2 { font-size: 2.25rem; }
+}
+
+/* 🔹 2. Tablets: max-width 768px */
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 4rem;
-    }
-
-    .wedding-date {
-        font-size: 1.3rem;
-    }
-
-    .countdown-grid {
-        grid-template-columns: repeat(2, auto);
-        gap: 0.75rem;
-    }
-
-    .time-number {
-        font-size: 1.5rem;
-    }
-
-    section h2 {
-        font-size: 2rem;
-    }
+    .main-title { font-size: 2.25rem; }
+    .wedding-date { font-size: 1.3rem; }
+    .countdown-grid { grid-template-columns: repeat(2, auto); gap: 0.75rem; }
+    .time-number { font-size: 1.5rem; }
+    section h2 { font-size: 2rem; }
 
     .navbar-nav {
         flex-direction: column;
-        gap: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(6px);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        display: none;
     }
 
-    .navbar-nav .nav-link {
-        font-size: 1rem;
+    .navbar-nav.show {
+        display: flex;
     }
 }
+
+/* 🔹 1. Small Phones: max-width 480px */
+@media (max-width: 480px) {
+    .main-title { font-size: 1.25rem; }
+    .wedding-date { font-size: 1rem; text-align: center; }
+    .countdown-grid { grid-template-columns: 1fr 1fr; gap: 0.25rem; }
+    .time-number { font-size: 1.0rem; }
+    .time-label { font-size: 0.5rem; }
+    .navbar-nav .nav-link { font-size: 0.9rem; }
+    section h2 { font-size: 1.5rem; }
+}
+
+
