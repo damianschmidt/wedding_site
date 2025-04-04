@@ -37,7 +37,6 @@ body, html {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.6);
 }
 
-/* Scrolled navbar (after header) */
 .navbar.scrolled {
   position: fixed;
   background-color: white;
@@ -75,7 +74,6 @@ header::before {
   z-index: 1;
 }
 
-/* Title */
 .title-wrapper {
   position: absolute;
   top: 50%;
@@ -221,6 +219,105 @@ footer {
   text-align: center;
 }
 
+/* Timeline – Alternating Style */
+.timeline-alt {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-alt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #f44336, #4caf50);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  z-index: 2;
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-subtitle {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+.timeline-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 5px #fff;
+  z-index: 2;
+  margin: 0 1rem;
+}
+
+.timeline-item.left .timeline-icon {
+  order: 1;
+}
+.timeline-item.left .timeline-content {
+  order: 2;
+}
+
+.timeline-item.right .timeline-icon {
+  order: 2;
+}
+.timeline-item.right .timeline-content {
+  order: 1;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-title { font-size: 3.25rem; }
@@ -238,6 +335,24 @@ footer {
   }
   .time-number { font-size: 1.5rem; }
   section h2 { font-size: 2rem; }
+
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-item .timeline-icon {
+    margin: 1rem 0;
+  }
+
+  .timeline-content {
+    max-width: 90%;
+  }
+
+  .timeline-alt::before {
+    left: 50%;
+  }
 }
 
 @media (max-width: 480px) {
